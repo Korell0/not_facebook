@@ -26,13 +26,18 @@
                     <li class="me-5 nav-item btn btn-primary">
                         <a class="nav-link" href="#!/profil">Profil</a>
                     </li>
-                    <li class="me-5 nav-item btn btn-primary">
-                        <a class="nav-link" href="#!/login">Belépés</a>
-                    </li>
-                    <li class="ms-5 nav-item btn btn-secondary">
-                        <a class="nav-link" href="#!/registration">Regisztráció</a>
-                    </li>
+
+    
                 </ul>
+                
+                <a class="me-3 nav-link btn btn-primary" href="#!/login" ng-if="!loggedUser">Belépés</a>
+                <a class="me-3 nav-link btn btn-secondary" href="#!/registration" ng-if="!loggedUser">Regisztráció</a>   
+                
+                <form class="d-flex" role="search" ng-controller="userCtrl" ng-if="loggedUser">
+                    <input type="text" class="form-control me-1" id="floatingInput" ng-model="loggedUser.name" disabled>
+                    <button class="btn btn-primary me-1" ng-click="logout()">Kilépés</button>   
+
+                </form>
             </div>
         </nav>
     </header>
@@ -58,6 +63,6 @@
 <script src="./assets/controllers/fooldalCtrl.js"></script>
 <script src="./assets/controllers/hirfolyamCtrl.js"></script>
 <script src="./assets/controllers/profilCtrl.js"></script>
-<script src="./assets/controllers/registrationCtrl.js"></script>
+<script src="./assets/controllers/userCtrl.js"></script>
 <script src="./assets/controllers/statisztikaCtrl.js"></script>
 </html>

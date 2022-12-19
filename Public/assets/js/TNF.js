@@ -13,6 +13,7 @@ app.run(function($rootScope, $locale, DB) {
     $rootScope.penznem = 'Ft';
     $rootScope.decimals = 0;
     $rootScope.exch = 1;
+    $rootScope.loggedUser = angular.fromJson(sessionStorage.getItem('TNFApp'));
 });
 
 app.config(function($routeProvider) {
@@ -42,8 +43,8 @@ app.config(function($routeProvider) {
             controller: 'profilCtrl'
         })
         .when('/login', {
-            templateUrl: 'Public/assets/views/login.html',
-            controller: 'registrationCtrl'
+            templateUrl: '/Public/assets/views/login.html',
+            controller: 'userCtrl'
         })
         .otherwise('/')
 });
