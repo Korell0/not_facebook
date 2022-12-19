@@ -18,28 +18,32 @@ app.run(function($rootScope, $locale, DB) {
 app.config(function($routeProvider) {
     $routeProvider
         .when('/', {
-            templateUrl: 'views/fooldal.html',
+            templateUrl: '/Public/assets/views/fooldal.html',
             controller: 'fooldalCtrl'
         })
-        .when('/reg', {
-            templateUrl: 'views/registration.html',
+        .when('/registration', {
+            templateUrl: '/Public/assets/views/registration.html',
             controller: 'userCtrl'
         })
         .when('/felhasznalok', {
-            templateUrl: 'views/felhasznalok.html',
+            templateUrl: '/Public/assets/views/felhasznalok.html',
             controller: 'felhasznalokCtrl'
         })
         .when('/statisztika', {
-            templateUrl: 'views/statisztika.html',
+            templateUrl: '/Public/assets/views/statisztika.html',
             controller: 'statisztikaCtrl'
         })
         .when('/hirfolyam', {
-            templateUrl: 'views/hirfolyam.html',
+            templateUrl: '/Public/assets/views/hirfolyam.html',
             controller: 'hirfolyamCtrl'
         })
         .when('/profil', {
-            templateUrl: 'views/profil.html',
+            templateUrl: '/Public/assets/views/profil.html',
             controller: 'profilCtrl'
+        })
+        .when('/login', {
+            templateUrl: 'Public/assets/views/login.html',
+            controller: 'registrationCtrl'
         })
         .otherwise('/')
 });
