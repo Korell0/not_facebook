@@ -14,35 +14,35 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg border border-danger">
             <div class="collapse navbar-collapse">
                 <ul class="ps-5 navbar-nav me-auto mb-2 mb-lg-0 text-center">
-                    <li class="me-5 nav-item btn btn-primary">
+                    <li class="me-5 nav-item btn btn-primary border border-danger">
                         <a class="nav-link" href="#!/felhasznalok">Felhasználok</a>
                     </li>
-                    <li class="me-5 ms-5 nav-item btn btn-primary">
+                    <li class="me-5 ms-5 nav-item btn btn-primary border border-danger">
                         <a class="nav-link" href="#!/hirfolyam">Hírfolyam</a>
                     </li>
-                    <li class="me-5 nav-item btn btn-primary">
+                    <li class="me-5 nav-item btn btn-primary border border-danger">
                         <a class="nav-link" href="#!/profil">Profil</a>
                     </li>
 
     
                 </ul>
                 
-                <a class="me-3 nav-link btn btn-primary" href="#!/login" ng-if="!loggedUser">Belépés</a>
-                <a class="me-3 nav-link btn btn-secondary" href="#!/registration" ng-if="!loggedUser">Regisztráció</a>   
+                <a class="me-3 nav-link btn btn-primary border border-danger" href="#!/login" ng-if="!loggedUser">Belépés</a>
+                <a class="me-3 nav-link btn btn-secondary border border-danger" href="#!/registration" ng-if="!loggedUser">Regisztráció</a>   
                 
                 <form class="d-flex" role="search" ng-controller="userCtrl" ng-if="loggedUser">
                     <input type="text" class="form-control me-1" id="floatingInput" ng-model="loggedUser.name" disabled>
-                    <button class="btn btn-primary me-1" ng-click="logout()">Kilépés</button>   
+                    <button class="btn btn-primary me-1 border border-danger" ng-click="logout()">Kilépés</button>   
 
                 </form>
             </div>
         </nav>
     </header>
     <main>
-        <div class="container" ng-view>
+        <div class="container bg-light" ng-view>
 
         </div>
     </main>
