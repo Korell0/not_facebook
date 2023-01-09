@@ -1,1 +1,24 @@
-<p>SÁNDOR megbaszta a kutyáját</p>
+<div class="shadow-lg bg-secondary rounded mb-3 text-center p-2 border border-dark">
+    <p>Szöveg</p>
+    <textarea  cols="100" rows="5" ng-model="szoveg"></textarea>
+
+
+    <div><button class="btn btn-warning border border-success" ng-click="upload()">Feltöltés</button></div>
+</div>
+
+<div ng-repeat="hir in hirek">
+    <div class="bg-dark text-white mb-3 mt-3 p-4 rounded border border-warning shadow-lg">
+        <div>{{hir.userID}}</div>
+        <div>{{hir.date}}</div>
+        <div class="text-center">{{hir.postmessage}}</div>
+        <div class="text-center">
+            <textarea cols="50" rows="2" ng-model="kommentka"></textarea>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-info border border-primary" ng-click="comment($index)">kommentelés</button>
+        </div>
+        <div class="bg-info" ng-repeat="komment in kommentek | filter:$index === komment.postID">
+            <div>{{komment.comment}}</div>
+        </div>
+    </div>
+</div>
