@@ -65,6 +65,7 @@ app.controller('userCtrl', function($scope, DB, $rootScope){
                     }
                 });
             }
+            window.location.href="/Public/Index.html#!/felhasznalok";
         }
     
         $scope.logout = function() {
