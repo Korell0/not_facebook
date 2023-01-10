@@ -8,17 +8,20 @@ app.controller('hirfolyamCtrl', function($scope, DB, $rootScope){
 
     DB.selectAll('comments').then(function(res){
         $scope.kommentek = res.data;
+        
         console.log($scope.kommentek)
     })
     
 
     $scope.upload = function(){
+        
         let data = {
             userID: $rootScope.loggedUser.ID,
             date: moment(new Date()).format('YYYY-MM-DD'),
             postmessage: $scope.szoveg
         }
         DB.insert('posts', data)
+        window.location.reload();
     }
 
     $scope.comment = function(index){

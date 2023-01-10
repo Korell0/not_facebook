@@ -1,4 +1,8 @@
 <div class="content">
-    <p>felhasználok</p>
-    <div>léaksdhféoagdsfniaenvtjésrjgl.bij.gjnviksnks.ymvrileavamlmkva.irnRJclhvílaik</div>
+    <div ng-repeat="user in felhasznalok">
+        <div class="bg-dark text-white mb-3 mt-3 p-4 rounded border border-warning shadow-lg">
+            <div>{{user.name}}</div>
+            <div>{{user.address}}</div>
+        </div>
+    </div>
 </div>
