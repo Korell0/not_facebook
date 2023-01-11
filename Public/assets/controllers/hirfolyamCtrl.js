@@ -1,7 +1,7 @@
 app.controller('hirfolyamCtrl', function($scope, DB, $rootScope){
     $scope.hirek = [];
     $scope.users = [];
-    $scope.kommentek = [];
+    $scope.comments = [];
 
     DB.selectAll('posts').then(function(res){
         $scope.hirek = res.data;
@@ -15,15 +15,16 @@ app.controller('hirfolyamCtrl', function($scope, DB, $rootScope){
             });
             console.log($scope.hirek)
         })
-    })
+        DB.selectAll('comments').then(function(res){
+            $scope.comments = res.data;
+            $scope.hirek.forEach(hir => {
+                $scope.comments.forEach(comment =>{
 
-    DB.selectAll('comments').then(function(res){
-        $scope.kommentek = res.data;
-        
-        console.log($scope.kommentek)
+                })
+            })
+        })
     })
     
-
     $scope.upload = function(){
         
         let data = {

@@ -17,8 +17,8 @@
         <div class="text-center">
             <button class="btn btn-info border border-primary" ng-click="comment($index)">kommentelés</button>
         </div>
-        <div class="bg-info" ng-repeat="komment in kommentek | filter:$index === komment.postID">
-            <div>{{komment.comment}}</div>
+        <div class="bg-info" ng-repeat="comment in comments ">
+            <div>{{}}</div>
         </div>
     </div>
 </div>
